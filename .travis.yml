@@ -1,0 +1,17 @@
+language: python
+python:
+- '3.6'
+env:
+- TOXENV=py36
+- TOXENV=flake8
+- TOXENV=build
+install:
+- pip install tox
+script: tox
+deploy:
+  provider: pypi
+  user: rmb938
+  password:
+    secure: lepL7GJwevBeICf2B+YQsqc2bAYXd8HaMxhAqYDnotBX7BDmJlsop8DP3WCMAldQAM/aQNwmacV2AAZcY2EDglCHjYFQecRmFPilvdyFn2S7NeYpmCEc2NxhG1nXVo+m/MSiKpQ/oKLMWtyZElzPhvvjBtPaIq7bHMZDefcEuVw165WZlStC1CRiTScM1xWsiwdMzW6odf+YUflN8ctdeydqWDQLRPL3nrVD3GRVTp/l08pPst3VUZ577nfDI3t4/3EbR/W3YuROtcbWVIicFzhGntAU/Wh4WljI453Cv2R2iifqPKSCWM1vedfRTRyjOmbKSEz6FfR272QS0OMaNm5GO/X1UN/6tZGXXu8rAIFuteSIwzKYZ+c91RyCssFQHNHseioG9uADPPchqoA9XmPEy1nANZtDJqaHAynK8IxX/IIk41mXuulqpoPKse64iMY3cbULQurnxjkA9jxyirHpMj5Zy7AEJpVI/4wLhxA/yEa65GSCeDFx/Q62tY5ANo2Tk5oGYKE4qJBKS/L5Q/ZG+zZZB0fnikrVCMApBkIQvPcvGZ0p1lmD/wuTxdFZWz41Gn0IUDqevbNd/DhsdiTiX+CimQgcLMyLWYTSm1fbnzF0oa43Go15nPo77AIr7k7sfO5kiOdEncr/eBFa1jNLz4rVuiz//RlowHvgIo4=
+  on:
+    tags: true
