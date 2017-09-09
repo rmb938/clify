@@ -31,6 +31,10 @@ class TestApplication(object):
         assert exit_code == 1
         assert 'We have failed the setup!' in logs
 
+    def test_subcommand_without_sub(self, application):
+        with pytest.raises(SystemExit):
+            application.test_command(['parent'])
+
     def test_subcommand(self, application):
         exit_code, logs = application.test_command(['parent', 'sub'])
         assert exit_code == 0

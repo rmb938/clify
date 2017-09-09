@@ -38,6 +38,8 @@ class Command(object):
 
         if len(self.subcommands) > 0:
             subsubparsers = parser.add_subparsers()
+            subsubparsers.required = True
+            subsubparsers.dest = 'command'
             for subcommand in self.subcommands:
                 subcommand.create_parser(subsubparsers)
         else:
