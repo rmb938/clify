@@ -26,6 +26,7 @@ class Daemon(Command):
 
         while True:
             threads = threading.enumerate()
+            threads = [thread for thread in threads if thread.daemon is False]
             if len(threads) <= 1:
                 break
             for t in list(threads):
